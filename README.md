@@ -1,7 +1,11 @@
 # Advanced House Prediction Project
 ## Project Overview
 
-- This project aims to build a predictive model for estimating house prices based on various features, such as size, number of rooms, and location. Accurate house price predictions are valuable for buyers, sellers, and real estate professionals, enabling informed decision-making in the real estate market.
+- This project aims to build a predictive model for estimating house prices based on over 80 various features, such as size, number of rooms, and location. Accurate house price predictions are valuable for buyers, sellers, and real estate professionals, enabling informed decision-making in the real estate market.
+<p align="center">
+  <img src="https://github.com/nnbankdeyu/Advanced-House-Price-Prediction/blob/main/Output%20Images/Project%20Image.png" alt="Image">
+</p>
+
 
 - To achieve this, we developed and evaluated three different models—**Ridge**, **Lasso**, and **Elastic Net**—achieving _**R-squared scores**_ of _**86.131%**_, _**87.189%**_, and _**86.131%**_ respectively, and _**MSE**_ values of _**0.245%**_, _**0.223%**_, and _**0.223%**_. Feature importance was analyzed using Recursive Feature Elimination (**RFE**), Variance Inflation Factor (**VIF**), and coefficient analysis in regression models to identify the most influential factors. The final result is a user-friendly **Streamlit** web application that allows users to input features and select a model for price predictions.
 
@@ -35,8 +39,8 @@ The dataset used in this project comes from the Kaggle competition "House Prices
 Link to Advanced House Price Prediction dataset on Kaggle: [here](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques).
 
 It includes various features that may influence house prices, including:
-- Numerical features: House size, number of rooms, year of construction, etc.
-- Categorical features: Location, condition, type of property, etc.
+- Numerical features: `LotFrontage`, `LotArea`, `OverallQual`, etc.
+- Categorical features: `MSSubClass`, `Street`, `Neighborhood`, etc.
 
 This comprehensive dataset offers a diverse range of characteristics to capture the nuances of the real estate market, making it well-suited for developing robust predictive models.
 
@@ -99,14 +103,15 @@ The Streamlit application allows users to:
 - **Get Price Prediction**: View the predicted price based on selected features.
 
 ## Demo
+Below is the demo of House Price Prediction App using Streamlit with simple interface that allows to input features of a house and get the prices as the out based on the features.
 <p align="center">
-  <img src="https://github.com/nnbankdeyu/Advanced-House-Price-Prediction/blob/main/Output%20Images/ridge_app.pdf" alt="Ridge App">
+  <img src="https://github.com/nnbankdeyu/Advanced-House-Price-Prediction/blob/main/Output%20Images/demo_app_1.png" alt="demo_app_1">
+</p>
+<p align="center">
+  <img src="https://github.com/nnbankdeyu/Advanced-House-Price-Prediction/blob/main/Output%20Images/demo_app_2.png" alt="demo_app_2">
 </p>
 
-<p align="center">
-  <img src="https://github.com/nnbankdeyu/Advanced-House-Price-Prediction/blob/main/Output%20Images/elastic_net_app.pdf" alt="Elastic Net App">
-</p>
-
+Link to Full Demo App with PDF format: [here](https://github.com/nnbankdeyu/Advanced-House-Price-Prediction/blob/main/Output%20Images/ridge_app.pdf)
 ## Usage
 - **Model Training**: Open House_Price_Prediction.ipynb and run the cells to train the Ridge, Lasso, and Elastic Net models.
 - **Feature Importance Analysis**: Follow the steps in the notebook to explore feature importance using RFE, VIF, and regression coefficients.
@@ -116,7 +121,7 @@ The Streamlit application allows users to:
 The Ridge, Lasso, and Elastic Net models were evaluated for accuracy, and feature importance analysis highlighted the most influential factors for house prices, such as:
 
 - Size and location were consistently among the top predictors.
-- Feature Importance Findings: RFE and VIF indicated that size, location, and number of rooms were key determinants in price variation.
+- Feature Importance Findings: RFE and VIF indicated that size (`GarageArea`, `LotArea`, `LotFrontage`), location (`Neighborhood`), and number of rooms/bathes/fireplaces were key determinants in price variation.
 
 ## Future Improvements
 Future enhancements could include:
