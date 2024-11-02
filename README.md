@@ -100,7 +100,24 @@ The Streamlit application allows users to:
 
 - **Input House Features**: Select house size, number of rooms, location, etc.
 - **Choose Prediction Model**: Select from Ridge, Lasso, or Elastic Net models.
+```python
+# Function to load models
+@st.cache_data()
+def load_model(file_path):
+    model = joblib.load(file_path)
+    return model
+# Model selection
+model_options = {"Ridge Regression": ridge_model, "Elastic Net": elastic_net_model}
+model_choice = st.selectbox("Choose a model for prediction", list(model_options.keys()))
+model = model_options[model_choice]
+```
 - **Get Price Prediction**: View the predicted price based on selected features.
+```python
+# Predict button
+if st.button("Predict"):
+    prediction = model.predict([input_features])  # Provide a list containing input_features
+    st.write("Predicted House Price: $", round(prediction[0], 2))
+```
 
 ## Demo
 Below is the demo of House Price Prediction App using Streamlit with simple interface that allows to input features of a house and get the prices as the out based on the features.
